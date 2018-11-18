@@ -1,0 +1,14 @@
+<mgl-map [style]="'mapbox://styles/mapbox/streets-v9'"
+         [zoom]="[7]"
+         [center]="center"
+         [cursorStyle]="cursorStyle"
+         (load)="map = $event">
+
+  <mgl-geojson-source>
+    <mgl-marker *ngFor="let vehicle of vehicles" [lngLat]="vehicle.coordinates">
+      <div [ngClass]="{'car-selected': vehicle.selected}" class="car-marker">
+        {{vehicle.name}}
+      </div>
+    </mgl-marker>
+  </mgl-geojson-source>
+</mgl-map>
