@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NavigatorPageComponent } from './navigator-page.component';
+import {NavigatorPageComponent} from './navigator-page.component';
 
 describe('NavigatorPageComponent', () => {
   let component: NavigatorPageComponent;
@@ -8,9 +8,9 @@ describe('NavigatorPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavigatorPageComponent ]
+      declarations: [NavigatorPageComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +19,4 @@ describe('NavigatorPageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });

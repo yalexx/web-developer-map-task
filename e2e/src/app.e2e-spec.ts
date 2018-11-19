@@ -7,8 +7,8 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display title Yanko Aleksandrov', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to YankoAleksandrov-WebDeveloper!');
+    expect(page.getParagraphText()).toEqual('Yanko Aleksandrov');
   });
 });

@@ -1,6 +1,14 @@
 # Yanko Aleksandrov - Technical Task
 
+Live Demo:
+https://yalexx.github.io/web-developer-map-task/navigator
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+
+## After pull
+
+To run the app install angular cli then. Run: npm i
+In the project folder to install dependencies.
 
 ## Development server
 
@@ -18,9 +26,16 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
+## Implemented Tests
+
+- Suppressed custom element schema errors. 
+- Basic unit test for some components
+- e2e test
+
 ## Not Implemented
 
-- E2E Tests.
+- Full unit test for every component
+- Full e2e test
 
 ## Deploying to Github Pages
 https://alligator.io/angular/deploying-angular-app-github-pages/
