@@ -26,7 +26,6 @@ export class VehicleListComponent implements OnInit, OnDestroy {
   }
 
   clickSelectVehicle(vehicle: Vehicle) {
-    console.log('clickSelect: ', vehicle);
     this.state.selectVehicle(vehicle);
     this.currentVehicle = vehicle;
   }

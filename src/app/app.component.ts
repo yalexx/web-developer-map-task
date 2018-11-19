@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, OnInit} from '@angular/core';
-import {Vehicle} from './services/vehicle.interface';
-import {StateService} from './services/state.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',

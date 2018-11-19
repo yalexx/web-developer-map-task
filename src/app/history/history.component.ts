@@ -14,7 +14,6 @@ export class HistoryComponent implements OnInit {
 
   constructor(private state: StateService) {
     this.subscription = this.state.getHistory().subscribe((history: String[]) => {
-      console.log('history: ', history);
       this.history = history;
     });
   }

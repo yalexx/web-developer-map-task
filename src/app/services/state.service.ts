@@ -16,17 +16,17 @@ export class StateService {
   private carModels: String[] = [];
   private history: String[] = [];
 
-  private vehiclesSubject = new Subject<any>();
-  private historySubject = new Subject<any>();
+  private vehiclesSubject = new Subject<Vehicle[]>();
+  private historySubject = new Subject<String[]>();
 
   constructor(private dataService: DataService) {
   }
 
-  getVehicles(): Observable<any> {
+  getVehicles(): Observable<Vehicle[]> {
     return this.vehiclesSubject.asObservable();
   }
 
-  getHistory(): Observable<any> {
+  getHistory(): Observable<String[]> {
     return this.historySubject.asObservable();
   }
 
@@ -34,7 +34,6 @@ export class StateService {
     const currentTime = new Date();
     const result = currentTime.toISOString().substr(11, 8);
     this.history.push(result + ' ' + message);
-    console.log('History: ', this.history);
     this.historySubject.next([...this.history]);
   }
 
@@ -53,24 +52,19 @@ export class StateService {
         coordinates: startRegion.coordinates
       });
     }
-    console.log([...this.vehicles]);
     this.vehiclesSubject.next([...this.vehicles]);
     this.setHistory('Welcome!');
   }
 
   selectVehicle(vehicle: Vehicle): void {
     this.vehicles.forEach((currVehicle: Vehicle) => {
-      if (currVehicle.name === vehicle.name) {
-        currVehicle.selected = true;
-      } else {
-        currVehicle.selected = false;
-      }
+      currVehicle.selected = currVehicle.name === vehicle.name;
+
     });
     this.vehiclesSubject.next([...this.vehicles]);
   }
 
   updateRegion(vehicle: Vehicle, region: Region): void {
-    console.log(vehicle);
     if (vehicle) {
       this.vehicles.forEach((currVehicle: Vehicle) => {
         if (currVehicle.name === vehicle.name) {
@@ -89,7 +83,7 @@ export class StateService {
     }
   }
 
-  getRegions() {
+  getRegions(): Region[] {
     return [...this.regions];
   }
 }

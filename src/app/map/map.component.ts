@@ -22,7 +22,6 @@ export class MapComponent implements OnInit, OnDestroy {
   constructor(private state: StateService) {
     this.subscription = this.state.getVehicles().subscribe((vehicles: Vehicle[]) => {
       this.vehicles = vehicles;
-      console.log('vehicles update: ', vehicles);
     });
   }
 
